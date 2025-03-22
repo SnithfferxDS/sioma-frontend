@@ -1,0 +1,70 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_IMAGE, APP_S_VERSION, APP_AUTHOR, APP_FULL_NAME } from '@Configs/constants';
+
+const { title } = Astro.props;
+
+const canonicalURL = Astro.url.origin;
+
+const titleWithFallback = title ? `${title} | ${SITE_TITLE} v ${APP_S_VERSION}` : `${SITE_TITLE} v ${APP_S_VERSION}`;
+---
+
+<head>
+    <!-- Properties -->
+    <meta property="og:title" content={titleWithFallback} />
+    <meta property="og:description" content={SITE_DESCRIPTION} />
+    <meta property="og:image" content={SITE_IMAGE} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content={SITE_TITLE} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:author" content={APP_AUTHOR} />
+    <!-- Generator -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={SITE_DESCRIPTION} />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={SITE_TITLE} />
+    <meta name="twitter:title" content={titleWithFallback} />
+    <meta name="twitter:description" content={SITE_DESCRIPTION} />
+    <meta name="twitter:image" content={SITE_IMAGE} />
+    <!-- SEO -->
+    <meta
+        name="keywords"
+        content="astro, astro db, astro db api, astro db rest api, astro db rest, astro db api rest, astro db api rest api"
+    />
+    <meta name="author" content={APP_AUTHOR} />
+    <meta name="author" content="Julian Cataldo, Zoltán Szőgyényi, Robert Tanislav" />
+    <meta name="copyright" content="MIT" />
+    <!-- PWA -->
+    <meta name="application-name" content={APP_FULL_NAME} />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content={SITE_TITLE} />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Icons -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Title -->
+    <title>{titleWithFallback}</title>
+    <link rel="canonical" href={canonicalURL} />
+    <!-- scripts -->
+    <script is:inline>
+        if (
+            localStorage.getItem('color-theme') === 'dark' ||
+            (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <!-- styles -->
+    <!-- <link rel="stylesheet" href="/styles.css" /> -->
+</head>
