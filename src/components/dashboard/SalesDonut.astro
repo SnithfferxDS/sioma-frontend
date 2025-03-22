@@ -1,0 +1,35 @@
+<div>
+	<div class="mb-4 flex items-center justify-between">
+		<h3 class="text-lg font-semibold">Sales</h3>
+		<select class="rounded border border-gray-300 px-2 py-1">
+			<option>This year</option>
+		</select>
+	</div>
+	<div class="h-64">
+		<canvas id="salesDonut"></canvas>
+	</div>
+</div>
+
+<script>
+	import Chart from "chart.js/auto";
+
+	const canvasElement = document.getElementById("salesDonut");
+	if (canvasElement) {
+		new Chart(canvasElement as HTMLCanvasElement, {
+			type: "doughnut",
+			data: {
+				labels: ["Basic Plan", "Pro Plan", "Enterprise"],
+				datasets: [
+					{
+						data: [30, 50, 20],
+						backgroundColor: ["#1982c4", "#ff595e", "#8ac926"],
+					},
+				],
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+			},
+		});
+	}
+</script>

@@ -1,0 +1,43 @@
+---
+
+---
+
+<div>
+	<div class="mb-4 flex items-center justify-between">
+		<h3 class="text-lg font-semibold">Trend</h3>
+		<select class="rounded border border-gray-300 px-2 py-1">
+			<option>This year</option>
+		</select>
+	</div>
+	<div class="h-64 w-full">
+		<!-- Chart will be rendered here using client-side JS -->
+		<canvas id="trendChart"></canvas>
+	</div>
+</div>
+
+<script>
+	import Chart from "chart.js/auto";
+
+	new Chart(document.getElementById("trendChart") as HTMLCanvasElement, {
+		type: "bar",
+		data: {
+			labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+			datasets: [
+				{
+					label: "Revenue",
+					data: [3000, 6000, 4500, 5000, 8000, 9000, 8500],
+					backgroundColor: "#ff595e",
+				},
+				{
+					label: "Expenses",
+					data: [2000, 4000, 3000, 3500, 5000, 6000, 5500],
+					backgroundColor: "#8ac926",
+				},
+			],
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+		},
+	});
+</script>

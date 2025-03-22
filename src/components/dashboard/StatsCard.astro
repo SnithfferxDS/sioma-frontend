@@ -1,0 +1,14 @@
+---
+interface Props {
+	title: string;
+	value: string | number;
+	className?: string;
+}
+
+const { title, value, className = "" } = Astro.props;
+---
+
+<div class={`rounded-lg p-6 ${className}`}>
+	<h3 class="text-sm font-medium opacity-80">{title}</h3>
+	<p class="mt-2 text-3xl font-bold">{value}</p>
+</div>
