@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="256"
+   height="256"
+   viewBox="0 0 256 256"
+   sodipodi:docname="logo.png"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="256"
+       height="256"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g1">
+    <path
+       style="fill:#520985;fill-opacity:1;stroke:none;stroke-width:0.993792;stroke-opacity:1"
+       d="m 24.523614,256.99089 c 0.24244,-15.98205 -9.09334,-22.31527 -23.77700969,-23.26116 L 0.85876431,43.652811 40.674044,4.44114 H 178.06479 c 93.9675,6.552732 72.42221,73.315759 78.39685,91.604667 l 0.11216,161.498923 z"
+       id="path1"
+       sodipodi:nodetypes="cccccccc" />
+    <path
+       style="fill:#aaeeff;fill-opacity:1;stroke:none;stroke-opacity:1"
+       d="m 82.269959,132.54938 20.636661,-36.506676 113.61375,43.404256 -5.38348,2.52351 -106.21147,-40.43214 -20.300191,35.88983 z"
+       id="path2" />
+    <path
+       style="fill:#aaeeff;fill-opacity:1;stroke:none;stroke-opacity:1"
+       d="m 85.33333,142.15613 20.34201,-35.2119 100.00495,37.78935 -5.2342,1.78438 -93.14498,-34.53779 -19.98512,34.81536 z"
+       id="path3" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:118.98px;font-family:Impact;-inkscape-font-specification:'Impact Condensed';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#aaeeff;fill-opacity:1;stroke:none;stroke-width:1.11543;stroke-opacity:1"
+       x="30.487631"
+       y="217.1293"
+       id="text5"
+       transform="scale(0.93349193,1.0712465)"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         x="30.487631"
+         y="217.1293"
+         style="font-size:118.98px;stroke-width:1.11543">s</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:108.314px;font-family:Impact;-inkscape-font-specification:'Impact Condensed';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#aaeeff;fill-opacity:1;stroke:none;stroke-width:1.35392;stroke-opacity:1"
+       x="81.366188"
+       y="235.60469"
+       id="text7"
+       transform="scale(0.97468106,1.0259766)"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         x="81.366188"
+         y="235.60469"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lessons in Love';-inkscape-font-specification:'Lessons in Love';stroke-width:1.35392">i</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:99.2319px;font-family:Impact;-inkscape-font-specification:'Impact Condensed';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#aaeeff;fill-opacity:1;stroke:none;stroke-width:1.2404;stroke-opacity:1"
+       x="118.52414"
+       y="230.8703"
+       id="text6"
+       transform="scale(0.99970124,1.0002989)"><tspan
+         sodipodi:role="line"
+         id="tspan6"
+         x="118.52414"
+         y="230.8703"
+         style="font-size:99.2319px;stroke-width:1.2404">MA</tspan></text>
+  </g>
+</svg>
