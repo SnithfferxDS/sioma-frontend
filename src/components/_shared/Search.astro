@@ -1,0 +1,39 @@
+---
+interface Props {
+	action: string;
+	method: string;
+	id: string;
+	placeholder?: string;
+}
+const { action, method, id, placeholder } = Astro.props;
+---
+
+<form class="pr-3 sm:pr-6" action={action} method={method}>
+	<label for={`${id}-search`} class="sr-only">Buscar </label>
+	<div class="relative w-full mt-1 sm:w-64 xl:w-96">
+		<input
+			type="text"
+			name="terms"
+			id={`${id}-search`}
+			class="
+			border 
+			sm:text-sm 
+			rounded-lg 
+			block 
+			w-full 
+			p-2.5 
+			bg-gray-50 
+			border-gray-300 
+			text-gray-900 
+			focus:ring-primary-500 
+			focus:border-primary-500 
+			dark:bg-gray-700 
+			dark:border-gray-600 
+			dark:placeholder-gray-400 
+			dark:text-white 
+			dark:focus:ring-primary-500 
+			dark:focus:border-primary-500"
+			placeholder=`Buscar ${placeholder}`
+		/>
+	</div>
+</form>

@@ -1,0 +1,108 @@
+---
+import type { MenuItem } from "@Types/schemas/MenuItemSchema";
+import { isCurrentPath } from "@Utils/navigation";
+
+interface Props {
+	menuItem: MenuItem;
+	currentPath: string;
+}
+
+const { menuItem, currentPath } = Astro.props;
+const isActive = menuItem.children?.some((child) =>
+	isCurrentPath(child.url || "", currentPath),
+);
+---
+
+<li class={`menu-item${isActive ? " active" : ""}`}>
+	<button
+		id={menuItem.id.toString()}
+		type="button"
+		class={`
+            flex 
+            items-center 
+            p-2 
+            w-full 
+            text-base 
+            font-normal 
+            rounded-lg 
+            transition 
+            duration-75 
+            group 
+            text-gray-100
+            ${isActive ? "bg-secondary-500" : ""} 
+            hover:bg-secondary-500
+            focus:outline-secondary-600
+            focus:bg-secondary-600/80
+            dark:hover:bg-secondary-400`}
+		aria-controls={`${menuItem.id}_${menuItem.name}`}
+		data-collapse-toggle={`${menuItem.id}_${menuItem.name}`}
+	>
+		<span class="material-symbols-outlined">
+			{menuItem.icon}
+		</span>
+		<span class="flex-1 ml-3 text-left whitespace-nowrap">
+			{menuItem.name}
+		</span>
+		<svg
+			aria-hidden="true"
+			class={`w-6 h-6 ${isActive ? "rotate-180" : ""}`}
+			fill="currentColor"
+			viewBox="0 0 20 20"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				fill-rule="evenodd"
+				d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+				clip-rule="evenodd"></path>
+		</svg>
+	</button>
+	<ul
+		id={`${menuItem.id}_${menuItem.name}`}
+		class="hidden py-2 space-y-2 submenu"
+	>
+		{
+			(menuItem.children && menuItem.children.length > 0) 
+			? 
+				menuItem.children.map((submenuItem, index) => (
+				<li>
+					<a
+						id={index.toString()}
+						href={submenuItem.url}
+						class={`
+                            flex 
+                            items-center 
+                            p-2 
+                            pl-8 
+                            w-full 
+                            text-base 
+                            font-normal 
+                            rounded-lg 
+                            transition 
+                            duration-75 
+                            group 
+                            text-gray-300 
+                            ${isCurrentPath(submenuItem.url, currentPath) ? "bg-secondary-600" : ""}
+                            hover:bg-secondary-600
+                            focus:outline-secondary-700
+                            dark:hover:bg-secondary-500`}
+					>
+						<span class="material-symbols-outlined">
+							{submenuItem.icon}
+						</span>
+						<span class="ml-3">{submenuItem.name}</span>
+					</a>
+				</li>
+			))
+			: (
+				<li>
+					<a
+						href={menuItem.url}
+						class=""
+						><span class="material-symbols-outlined">{menuItem.icon}</span>
+						<span class="ml-3">{menuItem.name}</span></a
+					>
+				</li>
+			)
+		}
+	</ul>
+</li>
