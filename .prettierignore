@@ -1,0 +1,11 @@
+# Package Managers
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+**/*.html
