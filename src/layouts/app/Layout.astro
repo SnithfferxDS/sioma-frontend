@@ -10,10 +10,18 @@ const { title } = Astro.props;
 <MainLayout title={title}>
     <NavBar />
     <Sidebar />
-    <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
+    <div class="flex pt-16 overflow-hidden">
         <div
             id="main-content"
-            class="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900 min-h-screen"
+            class="relative
+            w-full
+            h-full
+            overflow-y-auto
+            lg:ml-64
+            min-h-screen
+            bg-gradiant-to-br
+            from-secondary-400/25 to-secondary-100/50
+            dark:from-primary-400/25 dark:to-primary-100/50"
         >
             <slot />
             <Footer />
