@@ -1,0 +1,10 @@
+export const SITE_TITLE = import.meta.env.APP_NAME;
+export const SITE_DESCRIPTION = import.meta.env.APP_DESCRIPTION;
+export const SITE_IMAGE = import.meta.env.APP_LOGO;
+export const APP_S_VERSION = import.meta.env.APP_SHORT_VERSION;
+export const APP_AUTHOR = import.meta.env.APP_AUTHOR;
+export const APP_FULL_NAME = import.meta.env.APP_FULL_NAME;
+export const APP_URL = `${import.meta.env.APP_HOST_NAME}:${import.meta.env.APP_HOST_PORT}`;
+export const API_URL = import.meta.env.API_URL;
+export const API_SECRET = import.meta.env.API_KEY;
+export const API_TOKEN = import.meta.env.API_TOKEN;
