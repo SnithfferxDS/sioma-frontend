@@ -8,6 +8,57 @@
     "dist"
   ],
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@Assets/*": [
+        "src/assets/*"
+      ],
+      "@Components/*": [
+        "src/components/*"
+      ],
+      "@Configs/*": [
+        "src/configs/*"
+      ],
+      "@Layouts/*": [
+        "src/layouts/*"
+      ],
+      "@Lib/*": [
+        "src/lib/*"
+      ],
+      "@Middleware/*": [
+        "src/middleware/*"
+      ],
+      "@Pages/*": [
+        "src/pages/*"
+      ],
+      "@Templates/*": [
+        "src/templates/*"
+      ],
+      "@Types/*": [
+        "src/types/*"
+      ],
+      "@Styles/*": [
+        "src/styles/*"
+      ],
+      "@Utils/*": [
+        "src/lib/utils/*"
+      ],
+      "@DB/*": [
+        "db/*"
+      ],
+      "@Storage/*": [
+        "src/storage/*"
+      ],
+      "@Api/*": [
+        "src/pages/api/*"
+      ],
+      "@Modules/*": [
+        "src/modules/*"
+      ],
+      "@Services/*": [
+        "src/services/*"
+      ]
+    },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   }
