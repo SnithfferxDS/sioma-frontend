@@ -1,0 +1,10 @@
+node_modules
+dist
+build
+coverage
+*.min.js
+*.bundle.js
+*/*.yml
+.shopify
+.vscode
+.idea
