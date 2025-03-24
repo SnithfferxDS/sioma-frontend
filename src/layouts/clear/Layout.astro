@@ -5,15 +5,23 @@ const { title } = Astro.props;
 ---
 
 <MainLayout title={title}>
-    <div class="flex overflow w-screen bg-gray-50 dark:bg-gray-900">
+    <div class="flex pt-16 overflow-hidden">
         <div
             id="main-content"
-            class="relative w-full max-w-screen-2xl mx-auto overflow-y-auto bg-gray-50 dark:bg-gray-900 min-h-screen"
+            class="relative
+            w-full
+            h-full
+            mx-auto
+            overflow-y-auto
+            min-h-screen
+            bg-gradient-to-br
+            from-secondary-800/50 to-secondary-500/50
+            dark:from-primary-800/50 dark:to-primary-500/50"
         >
-            <div class="px-4 pt-2 2xl:px-0">
+            <div class="px-4 pt-6 2xl:px-0">
                 <slot />
-                <Footer />
             </div>
+            <Footer />
         </div>
     </div>
 </MainLayout>
