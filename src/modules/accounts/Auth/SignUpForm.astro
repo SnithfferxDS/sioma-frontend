@@ -2,7 +2,6 @@
 import Logo from '@Assets/img/app_logo.svg';
 import { Image } from 'astro:assets';
 import { APP_FULL_NAME, SITE_TITLE, APP_S_VERSION } from '@Configs/constants';
-import { asset, url } from '@Lib/utils/functions';
 ---
 
 <div
@@ -95,7 +94,6 @@ import { asset, url } from '@Lib/utils/functions';
                     required
                 />
             </div>
-
             <div>
                 <label
                     for="phone"
@@ -340,6 +338,7 @@ import { asset, url } from '@Lib/utils/functions';
 <script>
     import { showSuccess, showError } from '@Lib/utils/notifications';
     import { validateUserAccount } from '@Lib/utils/validation';
+    import { API_URL } from '@Configs/constants';
 
     const userNameInput = document.getElementById(
         'user_name'
@@ -370,7 +369,7 @@ import { asset, url } from '@Lib/utils/functions';
             return;
         }
         try {
-            const response = await fetch('/api/auth', {
+            const response = await fetch(`${API_URL}/auth`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -398,7 +397,7 @@ import { asset, url } from '@Lib/utils/functions';
         const value = userNameInput.value;
         if (value) {
             if (value.length > 3) {
-                const exists = await fetch('/api/auth/user/exists', {
+                const exists = await fetch(`${API_URL}/users/exists`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ userName: value })
@@ -423,7 +422,7 @@ import { asset, url } from '@Lib/utils/functions';
             password: formData.get('user_migrate_password')
         };
         try {
-            const response = await fetch('/api/auth/user/migrate', {
+            const response = await fetch(`${API_URL}/users/migrate`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
