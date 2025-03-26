@@ -1,0 +1,49 @@
+---
+import { API_URL } from '@Configs/constants';
+// import ProductList from '@Components/products/ProductList';
+
+const products = [];
+
+if (Astro.request.method !== 'GET') {
+    try {
+        const data = await Astro.request.json();
+        const page = data.page ? data.page : 1;
+        const limit = data.limit ? data.limit : 100;
+        const terms = data.terms ? data.terms : '';
+        const result = await fetch(
+            `${API_URL}/products/search?page=${page}&limit=${limit}&terms=${terms}`
+        ).then(res => res.json());
+        console.log(result);
+        /* if (result) {
+            result.map(product => {
+                products.push({
+                    id: product.id,
+                    name: product.name,
+                    dsin: product.dsin,
+                    description: product.short_desc,
+                    image: product.image_url,
+                    price: product.price,
+                    brand: product.brand,
+                    category: product.category,
+                    productType: product.product_type,
+                    store: {
+                        id: product.store.id,
+                        price: product.store.price,
+                        offer: product.store.offer,
+                        status: product.store.status
+                    },
+                    stocks: null
+                });
+            });
+        } */
+    } catch (error) {
+        console.log(error);
+    }
+}
+---
+
+<!-- <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
+>
+    <ProductList products={products} />
+</div> -->
