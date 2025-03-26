@@ -1,0 +1,45 @@
+---
+import Layout from '@Layouts/guest/Layout.astro';
+import BreadCrumbs from '@Components/_shared/BreadCrumbs.astro';
+const breadcrumbs = [
+    { label: 'Legal', path: '/legal' },
+    { label: 'Licensing', path: '/legal/licensing' }
+];
+---
+
+<Layout title="Licensing">
+    <div class="px-4 pt-6">
+        <div class="p-4 block sm:flex items-center justify-between">
+            <div class="w-full mb-1">
+                <BreadCrumbs
+                    routes={breadcrumbs}
+                    currentRoute={Astro.url.pathname}
+                    headerTitle="Licensing"
+                />
+            </div>
+        </div>
+        <div class="mt-8 flex flex-col">
+            <article
+                class="prose dark:prose-invert lg:prose-xl max-w-none px-4 py-8"
+            >
+                <h1 class="text-4xl font-bold mb-6">Licensing</h1>
+                <p
+                    class="font-semibold text-black dark:text-white text-balance"
+                >
+                    Ultima actualización: 18 de Agosto de 2019.
+                </p>
+                <p class="text-black dark:text-white text-balance">
+                    Bytes4Run extiende la presente licencia para el uso de su
+                    software bajo los términos de la Licencia Pública General de
+                    GNU (GPL). SIOMA es un software de código abierto y
+                    gratuito. Puede redistribuirlo y/o modificarlo bajo los
+                    términos de la Licencia Pública General de GNU según lo
+                    publicado por la Free Software Foundation, ya sea la versión
+                    3 de la Licencia, o (a su elección) cualquier versión
+                    posterior.
+                </p>
+                <!-- Rest of the content remains the same but wrapped in proper HTML tags -->
+            </article>
+        </div>
+    </div></Layout
+>

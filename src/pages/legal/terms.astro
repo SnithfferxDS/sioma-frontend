@@ -1,0 +1,268 @@
+---
+import Layout from '@Layouts/guest/Layout.astro';
+import BreadCrumbs from '@Components/_shared/BreadCrumbs.astro';
+import { SITE_TITLE } from '@Configs/constants';
+const breadcrumbs = [
+    { label: 'Legal', path: '/legal' },
+    { label: 'Use Terms', path: '/legal/terms' }
+];
+---
+
+<Layout>
+    <div class="px-4 pt-6">
+        <div class="p-4 block sm:flex items-center justify-between">
+            <div class="w-full mb-1">
+                <BreadCrumbs
+                    routes={breadcrumbs}
+                    currentRoute={Astro.url.pathname}
+                    headerTitle="Privacy Policies"
+                />
+            </div>
+        </div>
+        <div class="mt-8 flex flex-col">
+            <h3>Ultima actualización 20/03/2025.</h3>
+            <ol>
+                <li list-styles-list-styles-type="I">
+                    <strong>Reconocimiento y aceptación de términos.</strong><ol
+                    >
+                        <li list-styles-type="a">
+                            SIOMA(<a
+                                href="http://bytes4run.com/projects/sioma"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                >https://bytes4run.com</a
+                            >) en adelante “LA APLICACION”, permite el uso de la
+                            aplicación web y servicios que ésta presta a los
+                            usuarios que se encuentren registrados o no en la
+                            aplicación web, siendo estos últimos limitados en
+                            servicios tales como: modificación de artículos,
+                            agregar artículos, descuentos, ofertas,
+                            reconociéndose como “EL USUARIO” a todo individuo
+                            registrado mediante la creación de una cuenta
+                            electrónica en LA APLICACION y reconociéndose como
+                            “CLIENTE” a todo individuo que no haya creado una
+                            cuenta electrónica en LA APLICACION, todo esto
+                            sujeto a las siguientes condiciones y términos de
+                            uso (en adelante “CONDICIONES”). Las CONDICIONES le
+                            indicaran al USUARIO y al CLIENTE, lo que pueden
+                            esperar de LA APLICACION y sus servicios, lo que LA
+                            APLICACION espera por parte del CLIENTE y el USUARIO
+                            al usar la aplicación web, sus servicios y también
+                            la limitación de responsabilidad de LA APLICACION.
+                            las CONDICIONES pueden cambiar en cualquier momento,
+                            publicando las CONDICIONES modificados en su sitio
+                            Web e informando al USUARIO registrado, por medio de
+                            un correo electrónico que le llevarán a las
+                            condiciones y/o la aplicación web actualizados. Al
+                            acceder y usar esta aplicación web el CLIENTE o el
+                            USUARIO está aceptando las condiciones de uso del la
+                            aplicación web. Si el cliente no está de acuerdo con
+                            estos términos o alguna condición descrita en este
+                            documento, puede presentar una queja formal al
+                            correo electrónico <a
+                                href="mailto:info@bytes4run.com"
+                                target="_blank"
+                                rel="noreferrer noopener">info@bytes4run.com</a
+                            > y se le brindará la información que sea necesaria para
+                            una aclaración a dichas CONDICIONES.
+                        </li>
+                        <li list-styles-type="a">
+                            Al momento de registrarse el CLIENTE reconoce y
+                            acepta que los datos personales que provee a LA
+                            APLICACION son verdaderos, precisos, completos,
+                            pertenecen al creador de la cuenta y mantenerla
+                            información actualizada en todo momento. Estos datos
+                            son requeridos a fin de poder suministrarle nuestros
+                            servicios, evitar errores en el envío de mercadería.
+                            En caso que el cliente brindase información falsa,
+                            imprecisa o incompleta, o en caso que “LA
+                            APLICACION” tuviese motivos razonables para
+                            sospechar que dicha información es falsa, imprecisa
+                            o incompleta, “LA APLICACION” tendrá el derecho de
+                            suspender o deshabilitar definitivamente su acceso
+                            al sitio web y/o servicios relacionados al sitio
+                            web. “El USUARIO” es responsable de mantener la
+                            confidencialidad de su contraseña y de su nombre de
+                            inicio de sesión. “El USUARIO” deberá informar en
+                            manera inmediata a “LA APLICACION” sobre todo uso no
+                            autorizado de su cuenta o sobre cualquier otra
+                            violación a la seguridad, y privacidad de su cuenta,
+                            sin que esto implique para “LA APLICACION” asumir
+                            responsabilidad en modo alguno por dicho evento. Por
+                            parte de “LA APLICACION” se usan métodos de
+                            encriptación para salvaguardar la información de los
+                            usuarios registrados, más información en <a
+                                href={`${SITE_TITLE}/legal/privacy`}
+                                target="_blank"
+                                rel="noreferrer noopener">privacidad</a
+                            >.
+                        </li>
+                    </ol>
+                </li>
+                <li list-styles-type="I">
+                    <strong>Registro de cuenta.</strong><ol>
+                        <li list-styles-type="a">
+                            Todo CLIENTE que visita LA APLICACION tiene el
+                            derecho de crear una cuenta de usuario en el sitio
+                            web, siempre y cuando no haya infringido de forma
+                            directa o indirecta alguna de las normativas o
+                            políticas de privacidad,seguridad, normas
+                            anti-fraude, brindar información concreta, real y
+                            propia. Para realizar la creación de una cuenta de
+                            usuario puede hacerlo a través del siguiente
+                            vinculo: <a
+                                href={`${SITE_TITLE}/auth/sign-up`}
+                                target="_blank"
+                                rel="noreferrer noopener">creación de cuenta</a
+                            >. Seguir las indicaciones que se le presentan,
+                            tener a la mano la información necesaria mencionada
+                            en los apartados anteriores, no tener problemas
+                            legales insolventes, NO aparecer en DICOM.
+                        </li>
+                        <li list-styles-type="a">
+                            Para registrarse en LA APLICACION, deberá seguir el
+                            siguiente formato:
+                            <ul>
+                                <li list-styles-type="square">
+                                    Nombre completo del cliente.
+                                </li>
+                                <li list-styles-type="square">
+                                    Dirección de correo electrónico.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+                <li list-styles-type="I">
+                    <strong>Envíos</strong><ol>
+                        <li list-styles-type="a">
+                            Este sitio web permite pedidos a domicilio desde
+                            todo el país (El Salvador/Centro América).<br />Para
+                            realizar un envío a su dirección de domicilio
+                            necesitaremos la siguiente información:
+                            <ul>
+                                <li list-styles-type="square">
+                                    Nombre completo del cliente.
+                                </li>
+                                <li list-styles-type="square">
+                                    Dirección de domicilio.
+                                </li>
+                                <li list-styles-type="square">
+                                    Número telefónico.
+                                </li>
+                                <li list-styles-type="square">
+                                    Número de documento de identificación.
+                                </li>
+                            </ul>
+                        </li>
+                        <li list-styles-type="a">
+                            Los envíos deben considerar las siguientes normas,
+                            para su transporte.
+                            <p>
+                                Los productos tienen especificaciones de peso y
+                                tiempo de envío, así como restricciones por
+                                parte de la compañía de transporte.
+                            </p>
+                            <ul>
+                                <li list-styles-type="disc">
+                                    Para productos menores a 10 libras el tiempo
+                                    de entrega puede ser desde 3 días hasta 5
+                                    días como máximo para su entrega en todo el
+                                    territorio salvadoreño.
+                                </li>
+                                <li list-styles-type="disc">
+                                    Par productos con peso mayor a 10 libras y
+                                    por debajo de las 50 libras de peso, el
+                                    tiempo de entrega puede ser desde 3 a 10
+                                    días como máximo en todo el territorio
+                                    salvadoreño.
+                                </li>
+                                <li list-styles-type="disc">
+                                    Los productos con peso por encima de las 50
+                                    libras, tienen un tiempo de entrega que
+                                    puede ser desde 5 a 15 días como máximo para
+                                    su entrega en todo el territorio
+                                    salvadoreño.
+                                </li>
+                            </ul>
+                        </li>
+                        <li list-styles-type="a">
+                            Formato de dirección:
+                            <ul>
+                                <li list-styles-type="disc">
+                                    Nombre del cliente: Maria Juana
+                                </li>
+                                <li list-styles-type="disc">
+                                    Apellidos del Cliente: Watson Parker
+                                </li>
+                                <li list-styles-type="disc">
+                                    Empresa: Nombre de su Empresa o Compañía (sí
+                                    posee).
+                                </li>
+                                <li list-styles-type="disc">
+                                    Dirección: Número de Casa o de Departamento;
+                                    Calle o Avenida; Barrio; Pasaje, Bloque o
+                                    Polígono(#34 2° Calle Norponiente Barrio
+                                    Nuevo, Block A).
+                                </li>
+                                <li list-styles-type="disc">
+                                    Ciudad: Nombre de la Ciudad o Municipio
+                                    (Santo Tomas).
+                                </li>
+                                <li list-styles-type="disc">
+                                    Estado: Nombre del Departamento
+                                    (Chalatenango).
+                                </li>
+                                <li list-styles-type="disc">
+                                    País: Nombre del País (El Salvador).
+                                </li>
+                            </ul>
+                        </li>
+                        <li list-styles-type="a">
+                            Sí la dirección de entrega es diferente a la
+                            dirección de facturación, enviar un correo
+                            electrónico con los siguientes datos:
+                            <ul>
+                                <li list-styles-type="disc">
+                                    Receptor: Nombre completo de la persona
+                                    encargada de recibir el paquete
+                                </li>
+                                <li list-styles-type="disc">
+                                    Número de identificación: Número de
+                                    identificación de la persona encargada de
+                                    recibir el paquete
+                                </li>
+                                <li list-styles-type="disc">
+                                    Dirección: Número de Casa o de Departamento;
+                                    Calle o Avenida; Barrio; Pasaje, Bloque o
+                                    Polígono (#34 2° Calle Norponiente Barrio
+                                    Nuevo, Block A).
+                                </li>
+                                <li list-styles-type="disc">
+                                    Ciudad: Nombre de la Ciudad o Municipio
+                                    (Santo Tomas).
+                                </li>
+                                <li list-styles-type="disc">
+                                    Estado: Nombre del Departamento
+                                    (Chalatenango).
+                                </li>
+                                <li list-styles-type="disc">
+                                    País: Nombre del País (El Salvador).
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+            <p>
+                <strong>Bytes4Run</strong> (LA APLICACION), se reserva el derecho
+                de cambiar los términos, condiciones, o políticas sin previa notificación,
+                anunciando estos cambios por medio del correo electrónico que el
+                USUARIO registra en LA APLICACION, así mismo mostrará dichos cambios
+                en las secciones correspondientes y ejecutará las medidas reflejadas
+                en estos documentos a partir de la fecha planteada en el correo de
+                notificación enviado al USUARIO.
+            </p>
+        </div>
+    </div>
+</Layout>
