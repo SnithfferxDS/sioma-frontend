@@ -1,27 +1,33 @@
 ---
 import MainLayout from '@Layouts/Layout.astro';
-import Footer from '@Templates/guest/Footer.astro';
+import Footer from '@Templates/clear/Footer.astro';
 const { title } = Astro.props;
 ---
 
 <MainLayout title={title}>
-    <div class="flex pt-16 overflow-hidden">
-        <div
-            id="main-content"
-            class="relative
-            w-full
-            h-full
-            mx-auto
-            overflow-y-auto
-            min-h-screen
+    <div
+        class="h-full
             bg-gradient-to-br
             from-secondary-800/50 to-secondary-500/50
             dark:from-primary-800/50 dark:to-primary-500/50"
-        >
-            <div class="px-4 pt-6 2xl:px-0">
-                <slot />
+    >
+        <div id="main-content" class="flex overflow-hidden">
+            <div
+                id="main-content"
+                class="relative
+                w-full
+                max-w-screen-2xl
+                mx-auto
+                overflow-y-auto
+                shadow-md"
+            >
+                <div
+                    class="flex flex-col items-center justify-center align-middle rounded-md"
+                >
+                    <slot />
+                </div>
+                <Footer />
             </div>
-            <Footer />
         </div>
     </div>
 </MainLayout>
