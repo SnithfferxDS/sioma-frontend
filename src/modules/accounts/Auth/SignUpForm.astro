@@ -373,7 +373,7 @@ import { APP_FULL_NAME, SITE_TITLE, APP_S_VERSION } from '@Configs/constants';
             return;
         }
         try {
-            const response = await fetch(`${API_URL}/auth`, {
+            const response = await fetch(`${API_URL}/auth/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
