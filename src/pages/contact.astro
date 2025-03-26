@@ -1,0 +1,99 @@
+---
+import Layout from '@Layouts/guest/Layout.astro';
+import BreadCrumbs from '@Components/_shared/BreadCrumbs.astro';
+const breadcrumbs = [{ label: 'Contact', path: '/contact' }];
+---
+
+<Layout title="Contact">
+    <div class="px-4 pt-6">
+        <div class="p-4 block sm:flex items-center justify-between">
+            <div class="w-full mb-1">
+                <BreadCrumbs
+                    routes={breadcrumbs}
+                    currentRoute={Astro.url.pathname}
+                    headerTitle="Contact"
+                />
+            </div>
+        </div>
+
+        <div class="mt-8 flex flex-col">
+            <!-- Card -->
+            <div
+                class="w-full max-w-xl p-6 space-y-8 sm:p-8 bg-white rounded-lg shadow dark:bg-gray-800"
+            >
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+                    Contáctenos
+                </h2>
+                <form class="mt-8 space-y-6" method="POST" id="contactForm">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label
+                                for="name"
+                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200"
+                                >Name</label
+                            >
+                            <input
+                                type="text"
+                                name="name"
+                                id="name"
+                                required
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            />
+                        </div>
+                        <div>
+                            <label
+                                for="email"
+                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200"
+                                >Email</label
+                            >
+                            <input
+                                type="email"
+                                name="_replyto"
+                                id="email"
+                                required
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            />
+                        </div>
+                        <div>
+                            <label
+                                for="message"
+                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200"
+                                >Message</label
+                            >
+                            <textarea
+                                name="message"
+                                id="message"
+                                rows="5"
+                                required
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            ></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <button
+                            type="submit"
+                            class="inline-flex
+					mr-2
+					justify-center
+					rounded-md
+					px-3
+					py-1.5
+					mb-3
+					text-sm
+					font-semibold
+					leading-6
+					shadow-sm
+					focus-visible:outline
+					focus-visible:outline-offset-2
+					bg-indigo-500
+					text-white
+					hover:bg-indigo-600
+					focus-visible:outline-indigo-500/80"
+                            >Enviar</button
+                        >
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</Layout>
