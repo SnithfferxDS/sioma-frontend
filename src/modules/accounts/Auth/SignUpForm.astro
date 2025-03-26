@@ -18,7 +18,11 @@ import { APP_FULL_NAME, SITE_TITLE, APP_S_VERSION } from '@Configs/constants';
         lg:mb-10
         dark:text-white"
     >
-        <Image src={Logo} alt={APP_FULL_NAME} class="h-8 md:h-14 lg:16" />
+        <Image
+            src={Logo}
+            alt={APP_FULL_NAME}
+            class="h-8 md:h-14 lg:h-16 mr-3"
+        />
         <span class="sr-only">{SITE_TITLE} {APP_S_VERSION}</span>
     </a>
     <!-- Card -->
@@ -369,7 +373,7 @@ import { APP_FULL_NAME, SITE_TITLE, APP_S_VERSION } from '@Configs/constants';
             return;
         }
         try {
-            const response = await fetch(`${API_URL}/auth`, {
+            const response = await fetch(`${API_URL}/auth/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
