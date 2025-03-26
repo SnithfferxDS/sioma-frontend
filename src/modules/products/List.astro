@@ -1,0 +1,101 @@
+---
+import BreadCrumbs from '@Components/_shared/BreadCrumbs.astro';
+import ProductSearch from '@Components/products/ProductSearch.astro';
+
+const [categories, propductTypes] = await Promise.all([
+    fetch('/api/categories/all').then(res => res.json()),
+    fetch('/api/product-types').then(res => res.json()),
+]);
+
+// Get filter values from URL
+const searchParams = Astro.url.searchParams;
+const request = `${Astro.url.origin}/api/products${Astro.url.search}`;
+// const productos = await fetch(`/api/products${Astro.url}`).then(res => res.json());
+const selectedCategory = searchParams.get('category');
+const selectedType = searchParams.get('type');
+const selectedView = searchParams.get('view') || 'grid';
+
+const breadcrumbs = [{ label: 'Productos', path: '/products' }];
+---
+
+<div
+    class="shadow-md rounded-lg overflow-hidden transition-shadow hover:shadow-lg"
+>
+    <div
+        class="p-4 block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5"
+    >
+        <div class="w-full mb-1">
+            <BreadCrumbs
+                routes={breadcrumbs}
+                currentRoute={Astro.url.pathname}
+                headerTitle="Tienda Shopify DSIN"
+            />
+            <div class="items-center justify-between flex">
+                <div class="flex items-center mb-4 sm:mb-0">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Digite UPC o Nombre de producto"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    />
+                    <button
+                        id="searchButton"
+                        class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-600 transition-colors"
+                    >
+                        <span class="material-symbols-outlined"> search </span>
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+
+                <div
+                    class="flex items-center mb-4 sm:mb-0 ml-auto space-x-1 sm:space-x-2"
+                >
+                    <button
+                        type="button"
+                        class="inline-flex
+							items-center
+							justify-center
+							w-1/2
+							px-3
+							py-2
+							text-sm
+							font-medium
+							text-center
+							rounded-lg
+							focus:ring-4
+							sm:w-auto
+							text-white
+							bg-purple-700
+							hover:bg-purple-800
+							focus:ring-purple-300
+							dark:bg-purple-600
+							dark:hover:bg-purple-700
+							dark:focus:ring-purple-800"
+                        data-modal-target="modal-create-default"
+                        data-modal-show="modal-create-default"
+                        aria-controls="modal-create-default"
+                    >
+                        <svg
+                            class="w-5 h-5 sm:mr-2 sm:-ml-1"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                            ><path
+                                fill-rule="evenodd"
+                                d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                                clip-rule="evenodd"></path></svg
+                        >
+                        <span class="hidden md:block">Migrar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="flex flex-col">
+    <div class="overflow-x-auto">
+        <div class="inline-block min-w-full align-middle">
+            <ProductSearch />
+        </div>
+    </div>
+</div>
